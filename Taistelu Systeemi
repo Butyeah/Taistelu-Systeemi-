@@ -1,0 +1,80 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <cmath>
+#include <string>
+
+
+using namespace std;
+
+int health = 27;
+int PlayerHealth = 50;
+int ChooseAttack;
+
+
+int main()
+{
+    srand(time(0));
+    int y = 10+(rand()%6);
+    int c = 8+(rand()%6);
+    int x = 1+(rand()%6);
+    int E = 2+(rand()%6);
+    do
+    {
+        cout <<"Choose an attack: 1 or 2 or 3 "<<endl;
+        cin >> ChooseAttack;
+
+        switch (ChooseAttack){
+        case 1:
+          health = health - y;
+          break;
+
+        case 2:
+            health = health - c;
+            break;
+
+        case 3:
+            health = health - x;
+            break;
+
+        default:
+            cout << "Sorry no attack found";
+        }
+        PlayerHealth = PlayerHealth - E;
+
+
+
+         cout <<" Enemy health: " << health;
+         cout <<" Player health: " << PlayerHealth;
+
+
+        if (health <= 0)
+            break;
+
+        if (PlayerHealth <= 0)
+            break;
+
+    }
+
+    while(health >=0 || PlayerHealth >=0 );
+
+    if (PlayerHealth <=0){
+      cout <<" Game Over " <<endl;
+    }
+
+    if (health <= 0){
+    cout <<" tarina jatkuu " <<endl;
+    }
+
+
+
+
+
+}
+
+
+
+
+
+
+
